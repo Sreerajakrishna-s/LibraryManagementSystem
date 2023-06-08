@@ -1,0 +1,151 @@
+/* .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: calc(105% - 20px);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.podcast-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.podcast-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.star-ratings {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.star-ratings i {
+  color: gold;
+  margin-right: 2px;
+}
+
+.author-name {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+ */
+Reset default styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.card-container {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 auto; 
+}
+
+
+/* Header styles */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Card styles */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Podcast image styles */
+.podcast-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+/* Podcast title styles */
+.podcast-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Author name styles */
+.author-name {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Star ratings styles */
+.star-ratings {
+  display: flex;
+  color: #ffc107;
+  margin-bottom: 10px;
+}
+
+.fa-star,
+.fa-star-half {
+  font-size: 16px;
+}
+
+/* Audio player styles */
+audio {
+  width: 100%;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}

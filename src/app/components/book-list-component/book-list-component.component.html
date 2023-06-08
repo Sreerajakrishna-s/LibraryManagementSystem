@@ -1,0 +1,87 @@
+ <div class="container">
+    <ng-template #navigationTemplate></ng-template>
+    <nav class="top-nav">
+      <a routerLink="/home" routerLinkActive="active">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a
+        routerLink="/notifications"
+        routerLinkActive="active"
+        class="notification-icon"
+      >
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </a>
+    </nav>
+    <div class="sidenav">
+      <div class="side-nav">
+        <ul>
+          <li>
+            <a href="/dashboard" routerLinkActive="active">
+              <i class="fas fa-chart-bar"></i> Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="/about" routerLinkActive="active">
+              <i class="fas fa-info-circle"></i> about
+            </a>
+          </li>
+        
+          <li>
+            <a href="/terms" routerLinkActive="active">
+              <i class="fas fa-file"></i> Terms &amp; Condition
+            </a>
+          </li>
+          <li>
+            <a href="/logout" routerLinkActive="active">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+          </li>
+        </ul>
+        </div>
+       <div class="container">
+        <h2>Available Books</h2>
+        <!-- <p>Count: {{ getBookCount() }}</p> -->
+        <p>Number of Books Available {{ getBookCount('title') }}</p>
+        <div class="filters">
+          <input type="text" [(ngModel)]="filterCriteria.title" (input)="filterBooks()" placeholder="Title">
+          <input type="text" [(ngModel)]="filterCriteria.author" (input)="filterBooks()" placeholder="Author">
+          <input type="text" [(ngModel)]="filterCriteria.subject" (input)="filterBooks()" placeholder="Subject">
+          <input type="text" [(ngModel)]="filterCriteria.publishDate" (input)="filterBooks()" placeholder="Publish Date">
+        </div>
+        <div class="card-container">
+          <div class="row">
+            <div class="card" *ngFor="let book of getPaginatedBooks()" (click)="toggleBookDetails(book)">
+              <img [src]="book.image" alt="Book Image">
+              <h3>{{ book.title }}</h3>
+              <p>Author: {{ book.author }}</p>
+              <p>Category: {{ book.category }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="page">
+          <button [disabled]="currentPage === 1" (click)="goToPage(1)">
+            <i class="fas fa-angle-double-left"></i>
+          </button>
+          <button [disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)">
+            <i class="fas fa-angle-left"></i>
+          </button>
+          <span>{{ currentPage }}</span>
+          <button [disabled]="currentPage === totalPages" (click)="goToPage(currentPage + 1)">
+            <i class="fas fa-angle-right"></i>
+          </button>
+          <button [disabled]="currentPage === totalPages" (click)="goToPage(totalPages)">
+            <i class="fas fa-angle-double-right"></i>
+          </button>
+        </div>
+        
+        <div *ngIf="selectedBook">
+          <div class="book-reader">
+            <h2>Book Reader</h2>
+            <div class="book-content" [innerHTML]="selectedBook.content"></div>
+          </div>
+          <button (click)="toggleReadingMode(selectedBook)">Close</button>
+        </div>
+        
+      </div>
+      

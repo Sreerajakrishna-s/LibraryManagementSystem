@@ -1,0 +1,14 @@
+
+<div class="row">
+    <div class="headline" *ngFor="let article of articles">
+      <h1 class="heading">{{article.title}}</h1>
+        <p class="auth"><span class="sub-head"> Author: </span>{{article.author}}</p>
+        <div class="article-content">
+        <p>
+          {{article.description}}
+        </p>
+        </div>
+         <img class="article__featured-image"  src="{{article.urlToImage}}" srcset="{{article.urlToImage}}">
+      <div class="paginatn">
+       <p class="center"> <a class="btn" target="blank" href="{{article.url}}">Read full article</a></p>
+      </div>

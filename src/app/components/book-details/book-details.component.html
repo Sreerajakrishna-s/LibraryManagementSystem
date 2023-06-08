@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Book Details</h2>
+    <div class="book-info">
+      <img [src]="book.image" alt="Book Image">
+      <h3>{{ book.title }}</h3>
+      <p>Author: {{ book.author }}</p>
+      <p>Category: {{ book.category }}</p>
+    </div>
+  
+    <div *ngIf="!isReading" class="actions">
+      <button (click)="readNow()">Read Now</button>
+      <button (click)="requestBook()">Request Book</button>
+    </div>
+  
+    <div *ngIf="isReading" class="book-reader">
+      <h2>Book Reader</h2>
+      <div class="book-content">
+        <div class="book-reader">
+            <h2>Book Reader</h2>
+            <div class="book-content">
+              {{ book.content }}
+            </div>
+          </div>
+          
+      </div>
+      <button (click)="toggleReadingMode()">Close</button>
+    </div>
+  </div>
+  

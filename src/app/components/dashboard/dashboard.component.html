@@ -1,0 +1,93 @@
+<div class="container">
+  <ng-template #navigationTemplate></ng-template>
+  <nav class="top-nav">
+    <a routerLink="/home" routerLinkActive="active">
+      <i class="fas fa-home"></i> Home
+    </a>
+    <a
+      routerLink="/notifications"
+      routerLinkActive="active"
+      class="notification-icon"
+    >
+      <i class="fas fa-bell"></i>
+      <span class="badge">3</span>
+    </a>
+  </nav>
+  <div class="sidenav">
+    <div class="side-nav">
+      <ul>
+        <li>
+          <a href="/dashboard" routerLinkActive="active">
+            <i class="fas fa-chart-bar"></i> Dashboard
+          </a>
+        </li>
+       
+        <li>
+          <a href="#" (click)="displayUserProfile()">
+            <i class="fas fa-user"></i> My Profile
+          </a>
+        </li>
+        <li>
+          <a href="/about" routerLinkActive="active">
+            <i class="fas fa-info-circle"></i> about
+          </a>
+        </li>
+        <li>
+          <a href="/terms" routerLinkActive="active">
+            <i class="fas fa-file"></i> Terms &amp; Condition
+          </a>
+        </li>
+        <li>
+          <a href="/logout" routerLinkActive="active">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="dashboard-content">
+      <div class="search">
+        <div class="search-bar">
+         <h3>Welcome to LMS!</h3>
+        </div>
+      </div>
+      <div class="cards">
+        <a class="card" routerLink="/books" routerLinkActive="active">
+          <h3>Available Books</h3>
+          <br>
+      
+
+        </a>
+      <a class="card" routerLink="/news" routerLinkActive="active">
+        <h3>Newpaper</h3>
+      </a>
+      <a class="card" routerLink="/audio" routerLinkActive="active">
+        <h3>AudioBooks</h3>
+      </a>
+      </div>
+      <div class="heading"> 
+        <h5> Recently added </h5>
+      <div class="recommendation">
+        <div class="rcard">
+          <img src="https://m.media-amazon.com/images/I/81uRzjY3plL._AC_UL320_.jpg" alt="Image 1">
+          <h3>Twinkle Digest</h3>
+        </div>
+        <div class="rcard">
+          <img src="https://m.media-amazon.com/images/I/61nTspM+BYL._AC_UY218_.jpg" alt="Image 2">
+          <h3>Man's search for meaning</h3>
+        </div>
+        <div class="rcard">
+          <img src="https://images-eu.ssl-images-amazon.com/images/I/41QrSpRWgYL._AC_SX184_.jpg" alt="Image 3">
+          <h3>The light we carry</h3>
+        </div>
+        <div class="rcard">
+          <img src="https://images-eu.ssl-images-amazon.com/images/I/41kA4c9GYIL._AC_SX184_.jpg" alt="Image 3">
+          <h3>Happiness is success</h3>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+

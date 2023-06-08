@@ -1,0 +1,24 @@
+<div class="card-container">
+ <div class="wrapper">
+  <h1>Empower Learning</h1>
+  <div class="cards">
+    <div *ngFor="let podcast of podcastList" class="card">
+      <div class="card-body">
+        <img class="podcast-image" [src]="podcast.imageUrl" alt="Podcast Image">
+        <div class="podcast-content">
+          <h3 class="podcast-title">{{ podcast.title }}</h3>
+          <p class="author-name">{{ podcast.author }}</p>
+          <div class="star-ratings">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half"></i>
+          </div>
+          <audio #audioPlayer [src]="podcast.audioSrc" controls></audio>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
